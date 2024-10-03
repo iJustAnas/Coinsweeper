@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     API_HASH: str
 
 
-    REF_LINK: str = "https://t.me/BybitCoinsweeper_Bot?start=referredBy=6624523270"
+    REF_LINK: str = "https://t.me/BybitCoinsweeper_Bot?start=referredBy=6814195246"
     GAME_PLAY_EACH_ROUND: list[int] = [2, 4]
     TIME_PLAY_EACH_GAME: list[int] = [130, 180]
 

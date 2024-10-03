@@ -75,7 +75,7 @@ async def process() -> None:
 
     logger.info(f"Detected {len(get_session_names())} sessions | {len(get_proxies())} proxies")
 
-    action = parser.parse_args().action
+    action = 1
 
     if not action:
         print(start_text)
@@ -94,13 +94,8 @@ async def process() -> None:
     if action == 2:
         await register_sessions()
     elif action == 1:
-        ans = None
-        while True:
-            ans = input("> Do you want to run the bot with multi-thread? (y/n) ")
-            if ans not in ["y", "n"]:
-                logger.warning("Answer must be y or n")
-            else:
-                break
+        ans = 'y'  # Automatically select 'y' for multi-thread
+        logger.info(f"Automatically selected multi-threading option: {ans}")
 
         if ans == "y":
             tg_clients = await get_tg_clients()
@@ -111,7 +106,7 @@ async def process() -> None:
             proxies = get_proxies()
             await run_tapper1(tg_clients=tg_clients, proxies=proxies)
     elif action == 3:
-        ans = None
+        ans = 'y'
         while True:
             ans = input("> Do you want to run the bot with multi-thread? (y/n) ")
             if ans not in ["y", "n"]:
